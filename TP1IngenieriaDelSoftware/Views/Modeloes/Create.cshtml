@@ -1,0 +1,58 @@
+﻿@model API_TFI.Model.Modelo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Modelo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SKU" class="control-label"></label>
+                <input asp-for="SKU" class="form-control" />
+                <span asp-validation-for="SKU" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Denominacion" class="control-label"></label>
+                <input asp-for="Denominacion" class="form-control" />
+                <span asp-validation-for="Denominacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lim_inferiorO" class="control-label"></label>
+                <input asp-for="Lim_inferiorO" class="form-control" />
+                <span asp-validation-for="Lim_inferiorO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lim_supO" class="control-label"></label>
+                <input asp-for="Lim_supO" class="form-control" />
+                <span asp-validation-for="Lim_supO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lim_inferiorR" class="control-label"></label>
+                <input asp-for="Lim_inferiorR" class="form-control" />
+                <span asp-validation-for="Lim_inferiorR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lim_supR" class="control-label"></label>
+                <input asp-for="Lim_supR" class="form-control" />
+                <span asp-validation-for="Lim_supR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
