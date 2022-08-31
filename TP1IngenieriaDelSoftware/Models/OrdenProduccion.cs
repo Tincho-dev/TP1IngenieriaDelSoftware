@@ -26,6 +26,7 @@ namespace API_TFI.Model
             Semaforo = semaforo;
         }
 
+
         public OrdenProduccion (int Numero, DateTime FechaDeInicio)//crear()
         {
             this.NumeroOP = Numero;
