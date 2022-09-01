@@ -32,7 +32,7 @@ namespace TP1IngenieriaDelSoftware.Data
 
             Colores.Add(new Color("MARINO", "Azul Marino"));
 
-            Turnos.Add(new Turno(1,new NodaTime.LocalTime(6,0), new NodaTime.LocalTime(14, 0)));
+            Turnos.Add(new Turno(1, new NodaTime.LocalTime(6, 0), new NodaTime.LocalTime(14, 0)));
             Turnos.Add(new Turno(2, new NodaTime.LocalTime(14, 0), new NodaTime.LocalTime(22, 0)));
             Turnos.Add(new Turno(3, new NodaTime.LocalTime(22, 0), new NodaTime.LocalTime(6, 0)));
 
@@ -43,7 +43,17 @@ namespace TP1IngenieriaDelSoftware.Data
             Lineas.Add(new Linea(5));
 
             OrdenesDeProduccion.Add(new OrdenProduccion(
-                1,Lineas.ToArray()[1], Modelos.ToArray()[1], Colores.ToArray()[1]));
+                1,
+                Lineas.ToArray()[1],
+                Modelos.ToArray()[1],
+                Colores.ToArray()[1],
+                Turnos.ToArray()[1]));
+            OrdenesDeProduccion.Add(new OrdenProduccion(
+                2,
+                Lineas.ToArray()[2],
+                Modelos.ToArray()[2],
+                Colores.ToArray()[2],
+                Turnos.ToArray()[2]));
         }
 
         public List<Linea> LineasLibres()
