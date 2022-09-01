@@ -13,9 +13,10 @@ namespace TP1IngenieriaDelSoftware.Model
         public Modelo Modelo { get; set; }
         public Color Color { get; set; }
         public List<JornadaLaboral> Jornadas { get; set; } = new();
-        public Semaforo Semaforo { get; set; }
+        public Semaforo SemaforoObservado { get; set; }
+        public Semaforo SemaforoReproceso { get; set; }
 
-        public OrdenProduccion(int numeroOP, Linea linea, Modelo modelo, Color color,  Semaforo semaforo)
+        public OrdenProduccion(int numeroOP, Linea linea, Modelo modelo, Color color, Turno turno)
         {
             NumeroOP = numeroOP;
             Linea = linea;
@@ -23,15 +24,13 @@ namespace TP1IngenieriaDelSoftware.Model
             Fecha_Inicio = DateTime.UtcNow;
             Modelo = modelo;
             Color = color;
-            Semaforo = semaforo;
+
+            SemaforoReproceso = new Semaforo(modelo.Lim_supR, modelo.Lim_inferiorR);
+            SemaforoObservado = new Semaforo(modelo.Lim_supO, modelo.Lim_inferiorO);
+            Jornadas.Add(new JornadaLaboral(turno.HoraDeFin));
+
         }
 
-
-        public OrdenProduccion (int Numero, DateTime FechaDeInicio)//crear()
-        {
-            this.NumeroOP = Numero;
-            this.Fecha_Inicio = FechaDeInicio;
-        }
         public void BuscarOP()
         {
             //TODO

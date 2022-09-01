@@ -1,5 +1,5 @@
-﻿using API_TFI.Model;
-using NodaTime;
+﻿using NodaTime;
+using TP1IngenieriaDelSoftware.Model;
 
 namespace TP1IngenieriaDelSoftware.Models
 {

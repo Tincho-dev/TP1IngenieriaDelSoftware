@@ -41,26 +41,28 @@ namespace TP1IngenieriaDelSoftware.Data
             Lineas.Add(new Linea(3));
             Lineas.Add(new Linea(4));
             Lineas.Add(new Linea(5));
+
+            OrdenesDeProduccion.Add(new OrdenProduccion(
+                1,Lineas.ToArray()[1], Modelos.ToArray()[1], Colores.ToArray()[1]));
         }
 
-        public List<Linea> BuscarLinea(int linea)
+        public List<Linea> LineasLibres()
         {
-            bool libre = false;
+            List<Linea> lineasLibres = Lineas;
+
             foreach (OrdenProduccion op in OrdenesDeProduccion)
             {
-                if (op.Linea.Numero == linea)
-                {
-                    libre = true;
-                }
+                lineasLibres.Remove(op.Linea);
             }
-            return null;
+
+            return lineasLibres;
         }
 
-        public Turno BuscarTurno(LocalTime hora)
+        public Turno BuscarTurno(int hora)
         {
             foreach(Turno turno in Turnos)
             {
-                if(turno.HoraDeFin < hora && turno.HoraDeInicio > hora)
+                if(turno.HoraDeFin.Hour < hora && turno.HoraDeInicio.Hour > hora)
                     return turno;
             }
             return null;

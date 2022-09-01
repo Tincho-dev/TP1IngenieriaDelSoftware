@@ -1,4 +1,6 @@
-﻿namespace TP1IngenieriaDelSoftware;
+﻿using TP1IngenieriaDelSoftware.Model;
+
+namespace TP1IngenieriaDelSoftware;
 
 public class Sesion
 {
