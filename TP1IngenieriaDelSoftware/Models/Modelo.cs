@@ -24,6 +24,11 @@ namespace TP1IngenieriaDelSoftware.Model
             Lim_supR = lim_supR;
         }
 
+        public Semaforo CrearSemaforo(uint sup, uint inf)
+        {
+            return new Semaforo(sup, inf);
+        }
+
         public void Buscar()
         {
             //TODO

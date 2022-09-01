@@ -8,7 +8,7 @@ namespace TP1IngenieriaDelSoftware.Controllers
 {
     public class AdministradorIniciarOp : Controller
     {
-        public void IniciarOp()
+        public void IniciarOp(int numero)
         {
             //Empleado e = Sesion.ObtenerEmpleado();// como implementar singleton?
             MemoriaPersistente repo = new();
@@ -20,12 +20,14 @@ namespace TP1IngenieriaDelSoftware.Controllers
             //devolver datos al usuario apra elegir Modelo, color y linea
 
             OrdenProduccion op = new(
-                repo.OrdenesDeProduccion.Count()+1, 
-                lineasLibres.First(),
-                modelos.First(),
-                colores.First(),
+                numero,
                 turnoActual
                 );
+        }
+
+        public void ConfirmarOP()
+        {
+
         }
 
 

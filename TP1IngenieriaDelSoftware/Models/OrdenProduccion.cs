@@ -31,13 +31,26 @@ namespace TP1IngenieriaDelSoftware.Model
 
         }
 
+        public OrdenProduccion(int numeroOP, Turno turno)
+        {
+            NumeroOP = numeroOP;
+            Estado = EstadoOperacion.INICIADA;
+            Fecha_Inicio = DateTime.UtcNow;
+
+            Jornadas.Add(new JornadaLaboral(turno.HoraDeFin));
+        }
+
+        public void AsignarModelo(Modelo modelo) 
+        {
+            this.Modelo = modelo;
+
+            SemaforoReproceso = modelo.CrearSemaforo(modelo.Lim_supR, modelo.Lim_inferiorR);//agregar responsabilidad en DC
+            SemaforoObservado = modelo.CrearSemaforo(modelo.Lim_supO, modelo.Lim_inferiorO);
+        }
+
         public void BuscarOP()
         {
             //TODO
-        }
-        public void AsignarModelo(Modelo modelo)
-        {
-            this.Modelo = modelo;
         }
 
     }
