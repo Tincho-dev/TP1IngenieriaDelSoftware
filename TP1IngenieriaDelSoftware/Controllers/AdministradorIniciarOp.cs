@@ -17,6 +17,8 @@ namespace TP1IngenieriaDelSoftware.Controllers
             List<Color> colores = repo.Colores;
             List<Linea> lineasLibres = repo.LineasLibres();
 
+            //devolver datos al usuario apra elegir Modelo, color y linea
+
             OrdenProduccion op = new(
                 repo.OrdenesDeProduccion.Count()+1, 
                 lineasLibres.First(),
@@ -24,9 +26,9 @@ namespace TP1IngenieriaDelSoftware.Controllers
                 colores.First(),
                 turnoActual
                 );
-            
-
         }
+
+
 
 
         public IActionResult Index()
