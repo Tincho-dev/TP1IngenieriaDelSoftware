@@ -1,6 +1,6 @@
 ﻿using NodaTime;
 
-namespace API_TFI.Model
+namespace TP1IngenieriaDelSoftware.Model
 {
     public class Turno
     {

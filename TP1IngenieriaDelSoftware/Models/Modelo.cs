@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Reflection.Metadata.Ecma335;
 
-namespace API_TFI.Model
+namespace TP1IngenieriaDelSoftware.Model
 {
     public class Modelo
     {

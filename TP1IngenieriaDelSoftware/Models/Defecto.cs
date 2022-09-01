@@ -1,6 +1,6 @@
 ﻿using TP1IngenieriaDelSoftware.Models;
 
-namespace API_TFI.Model
+namespace TP1IngenieriaDelSoftware.Model
 {
     public class Defecto
     {

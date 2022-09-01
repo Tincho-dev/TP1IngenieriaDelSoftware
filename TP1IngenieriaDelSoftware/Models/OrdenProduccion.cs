@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using NodaTime;
 
-namespace API_TFI.Model
+namespace TP1IngenieriaDelSoftware.Model
 {
     public class OrdenProduccion
     {

@@ -1,8 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
-using TP1IngenieriaDelSoftware.Models;
 
-namespace API_TFI.Model
+namespace TP1IngenieriaDelSoftware.Model
 {
     public class Usuario
     {
