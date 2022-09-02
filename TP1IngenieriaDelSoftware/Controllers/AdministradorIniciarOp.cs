@@ -12,22 +12,7 @@ namespace TP1IngenieriaDelSoftware.Controllers
         MemoriaPersistente repo = new();
         OrdenProduccion op;
 
-        public bool AutenticarUsuario(string usuario, string contraseñaEncriptada)//gestorIniciarOp?
-        {
-            usuario = usuario.Trim();
-            contraseñaEncriptada = contraseñaEncriptada.Trim();
-
-            Usuario? usuarioReal = repo.Usuarios.Find(u => u._Usuario == usuario);
-
-            if(usuarioReal != null)
-            {
-                if (usuarioReal.ValidarContraseña(contraseñaEncriptada))
-                {
-                    return true;//autenticacion exitosa
-                }
-            }
-            return false;
-        }
+        
 
         public void IniciarOp(int numero)
         {
@@ -67,6 +52,23 @@ namespace TP1IngenieriaDelSoftware.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public bool AutenticarUsuario(string usuario, string contraseñaEncriptada)//gestorIniciarOp?
+        {
+            usuario = usuario.Trim();
+            contraseñaEncriptada = contraseñaEncriptada.Trim();
+
+            Usuario? usuarioReal = repo.Usuarios.Find(u => u._Usuario == usuario);
+
+            if (usuarioReal != null)
+            {
+                if (usuarioReal.ValidarContraseña(contraseñaEncriptada))
+                {
+                    return true;//autenticacion exitosa
+                }
+            }
+            return false;
         }
     }
 }
