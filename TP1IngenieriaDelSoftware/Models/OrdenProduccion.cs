@@ -40,6 +40,13 @@ namespace TP1IngenieriaDelSoftware.Model
             Jornadas.Add(new JornadaLaboral(turno.HoraDeFin));
         }
 
+        internal void Confirmar(Linea lineaActual, Color color, Modelo modelo)
+        {
+            this.Linea = lineaActual;
+            this.Color = color;
+            this.AsignarModelo(modelo);
+        }
+
         public void AsignarModelo(Modelo modelo) 
         {
             this.Modelo = modelo;
@@ -53,5 +60,6 @@ namespace TP1IngenieriaDelSoftware.Model
             //TODO
         }
 
+        
     }
 }
