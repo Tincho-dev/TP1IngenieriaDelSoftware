@@ -72,8 +72,11 @@ namespace TP1IngenieriaDelSoftware.Data
         {
             foreach(Turno turno in Turnos)
             {
-                if(turno.HoraDeFin.Hour < hora && turno.HoraDeInicio.Hour > hora)
+                if (turno.HoraDeFin.Hour < hora && turno.HoraDeInicio.Hour > hora)
+                {
                     return turno;
+                }
+                else throw new Exception("Fuera de Hoario Laboral");
             }
             return null;
         }
