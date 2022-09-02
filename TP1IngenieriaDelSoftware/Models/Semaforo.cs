@@ -32,7 +32,6 @@ namespace TP1IngenieriaDelSoftware.Model
             {
                 this.Color = color.ROJO;
             }
-
         }
     }
 }
