@@ -12,8 +12,6 @@ namespace TP1IngenieriaDelSoftware.Controllers
         MemoriaPersistente repo = new();
         OrdenProduccion op;
 
-        
-
         public void IniciarOp(int numero)
         {
             //Empleado e = Sesion.ObtenerEmpleado();// como implementar singleton?
@@ -49,10 +47,23 @@ namespace TP1IngenieriaDelSoftware.Controllers
 
 
 
+
+
+
         public IActionResult Index()
         {
             return View();
         }
+
+
+
+
+
+
+
+
+
+
 
         public bool AutenticarUsuario(string usuario, string contraseñaEncriptada)//gestorIniciarOp?
         {
