@@ -27,10 +27,10 @@ namespace TP1IngenieriaDelSoftware.Model
                 this.Color = color.AMARILLO;
             }else if(cantidadDefectos < LimiteInferior)
             {
-                this.Color=color.VERDE;
+                this.Color = color.VERDE;
             }else if(cantidadDefectos == LimiteSuperior)
             {
-
+                this.Color = color.ROJO;
             }
 
         }
