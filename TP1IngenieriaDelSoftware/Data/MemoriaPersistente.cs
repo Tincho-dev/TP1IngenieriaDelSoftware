@@ -70,16 +70,16 @@ namespace TP1IngenieriaDelSoftware.Data
 
         public Turno BuscarTurno(int hora)
         {
-            foreach(Turno turno in Turnos)
-            {
+            foreach (Turno turno in Turnos)
+                {
                 if (turno.HoraDeFin.Hour < hora && turno.HoraDeInicio.Hour > hora)
                 {
                     return turno;
                 }
-                else throw new Exception("Fuera de Hoario Laboral");
             }
-            return null;
+            throw new Exception("Fuera de Hoario Laboral");
         }
+        
 
         public Usuario BuscarUsuario(Usuario usuario)
         {

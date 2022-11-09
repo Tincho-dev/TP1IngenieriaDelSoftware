@@ -21,7 +21,7 @@ namespace TP1IngenieriaDelSoftware.Model
             NumeroOP = numeroOP;
             Linea = linea;
             Estado = EstadoOperacion.INICIADA;
-            Fecha_Inicio = DateTime.UtcNow;
+            Fecha_Inicio = DateTime.UtcNow.;
             Modelo = modelo;
             Color = color;
 
@@ -40,7 +40,11 @@ namespace TP1IngenieriaDelSoftware.Model
             Jornadas.Add(new JornadaLaboral(turno.HoraDeFin));
         }
 
-        internal void Confirmar(Linea lineaActual, Color color, Modelo modelo)
+        public OrdenDeProduccion()
+        {
+        }
+
+        public void Confirmar(Linea lineaActual, Color color, Modelo modelo)
         {
             this.Linea = lineaActual;
             this.Color = color;
