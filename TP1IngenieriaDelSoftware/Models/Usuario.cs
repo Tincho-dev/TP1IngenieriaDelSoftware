@@ -13,7 +13,13 @@ namespace TP1IngenieriaDelSoftware.Model
         {
             this.User = usuario;
             this.Password = GetSHA256(contraseña);
-            Permisos = permisos;
+            this.Permisos = permisos;
+        }
+
+        public Usuario(string usuario, string contraseña)
+        {
+            this.User = usuario;
+            this.Password = GetSHA256(contraseña);
         }
 
         //encriptacion
@@ -30,7 +36,7 @@ namespace TP1IngenieriaDelSoftware.Model
 
         internal bool ValidarContraseña(string contraseniaEncriptada)
         {
-            return this.Contraseña == contraseniaEncriptada;
+            return this.Password == contraseniaEncriptada;
         }
 
         /*public Empleado ObtenerEmpleado()

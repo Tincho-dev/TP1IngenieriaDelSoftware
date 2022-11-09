@@ -22,8 +22,8 @@ namespace TP1IngenieriaDelSoftware.Repositorio
             this.Usuarios.Add(new Usuario("Agustin", "efgh"));
             this.Usuarios.Add(new Usuario("Augusto", "ijkl"));
 
-            this.Modelos.Add(new Modelo("ABC123","Fila Runner 2020"));
-            this.Modelos.Add(new Modelo("DEF567", "Nike Pegasus 2022"));
+            this.Modelos.Add(new Modelo("ABC123","Fila Runner 2020",1,2,2,3));
+            this.Modelos.Add(new Modelo("DEF567", "Nike Pegasus 2022",1,2,3,4));
         }
 
         public Usuario BuscarUsuario(Usuario usuario)

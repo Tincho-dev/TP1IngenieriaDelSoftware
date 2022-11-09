@@ -44,33 +44,17 @@ namespace TP1IngenieriaDelSoftware.Controllers
 
         }
 
-
-
-
-
-
-
         public IActionResult Index()
         {
             return View();
         }
-
-
-
-
-
-
-
-
-
-
 
         public bool AutenticarUsuario(string usuario, string contraseñaEncriptada)//gestorIniciarOp?
         {
             usuario = usuario.Trim();
             contraseñaEncriptada = contraseñaEncriptada.Trim();
 
-            Usuario? usuarioReal = repo.Usuarios.Find(u => u._Usuario == usuario);
+            Usuario? usuarioReal = repo.Usuarios.Find(u => u.User == usuario);
 
             if (usuarioReal != null)
             {
