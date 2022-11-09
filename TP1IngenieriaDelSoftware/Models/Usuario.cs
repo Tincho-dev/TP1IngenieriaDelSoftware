@@ -5,14 +5,14 @@ namespace TP1IngenieriaDelSoftware.Model
 {
     public class Usuario
     {
-        public string _Usuario { get; set; }
-        public string Contraseña { get; set; }
+        public string User { get; set; }
+        public string Password { get; set; }
         public string Permisos { get; set; }
 
         public Usuario(string usuario, string contraseña, string permisos)
         {
-            this._Usuario = usuario;
-            this.Contraseña = GetSHA256(contraseña);
+            this.User = usuario;
+            this.Password = GetSHA256(contraseña);
             Permisos = permisos;
         }
 

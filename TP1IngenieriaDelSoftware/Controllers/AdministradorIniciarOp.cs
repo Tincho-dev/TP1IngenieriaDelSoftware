@@ -10,7 +10,7 @@ namespace TP1IngenieriaDelSoftware.Controllers
     public class AdministradorIniciarOp : Controller
     {
         MemoriaPersistente repo = new();
-        OrdenProduccion op;
+        OrdenDeProduccion op;
 
         public void IniciarOp(int numero)
         {

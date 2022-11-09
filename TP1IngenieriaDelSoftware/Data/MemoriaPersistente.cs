@@ -8,7 +8,7 @@ namespace TP1IngenieriaDelSoftware.Data
     {
 
         public List<Usuario> Usuarios = new();
-        public List<OrdenProduccion> OrdenesDeProduccion = new();
+        public List<OrdenDeProduccion> OrdenesDeProduccion = new();
         public List<Color> Colores = new();
         public List<Modelo> Modelos = new();
         public List<Turno> Turnos = new();
@@ -42,13 +42,13 @@ namespace TP1IngenieriaDelSoftware.Data
             Lineas.Add(new Linea(4));
             Lineas.Add(new Linea(5));
 
-            OrdenesDeProduccion.Add(new OrdenProduccion(
+            OrdenesDeProduccion.Add(new OrdenDeProduccion(
                 1,
                 Lineas.ToArray()[1],
                 Modelos.ToArray()[1],
                 Colores.ToArray()[1],
                 Turnos.ToArray()[1]));
-            OrdenesDeProduccion.Add(new OrdenProduccion(
+            OrdenesDeProduccion.Add(new OrdenDeProduccion(
                 2,
                 Lineas.ToArray()[2],
                 Modelos.ToArray()[2],
@@ -60,7 +60,7 @@ namespace TP1IngenieriaDelSoftware.Data
         {
             List<Linea> lineasLibres = Lineas;
 
-            foreach (OrdenProduccion op in OrdenesDeProduccion)
+            foreach (OrdenDeProduccion op in OrdenesDeProduccion)
             {
                 lineasLibres.Remove(op.Linea);
             }
@@ -83,7 +83,9 @@ namespace TP1IngenieriaDelSoftware.Data
             return Usuarios.FirstOrDefault(usuario);
         }
 
-
-
+        internal List<Usuario> GetUsuarios()
+        {
+            return Usuarios;
+        }
     }
 }

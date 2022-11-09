@@ -3,7 +3,7 @@ using NodaTime;
 
 namespace TP1IngenieriaDelSoftware.Model
 {
-    public class OrdenProduccion
+    public class OrdenDeProduccion
     {
         public int NumeroOP { get; set; }
         public Linea Linea { get; set; }
@@ -16,7 +16,7 @@ namespace TP1IngenieriaDelSoftware.Model
         public Semaforo SemaforoObservado { get; set; }
         public Semaforo SemaforoReproceso { get; set; }
 
-        public OrdenProduccion(int numeroOP, Linea linea, Modelo modelo, Color color, Turno turno)
+        public OrdenDeProduccion(int numeroOP, Linea linea, Modelo modelo, Color color, Turno turno)
         {
             NumeroOP = numeroOP;
             Linea = linea;
@@ -31,7 +31,7 @@ namespace TP1IngenieriaDelSoftware.Model
 
         }
 
-        public OrdenProduccion(int numeroOP, Turno turno)
+        public OrdenDeProduccion(int numeroOP, Turno turno)
         {
             NumeroOP = numeroOP;
             Estado = EstadoOperacion.INICIADA;
