@@ -28,6 +28,11 @@ namespace TP1IngenieriaDelSoftware.Model
             return sb.ToString();
         }
 
+        internal bool ValidarContraseña(string contraseniaEncriptada)
+        {
+            return this.Contraseña == contraseniaEncriptada;
+        }
+
         /*public Empleado ObtenerEmpleado()
         {
             return new Empleado();//TODO
