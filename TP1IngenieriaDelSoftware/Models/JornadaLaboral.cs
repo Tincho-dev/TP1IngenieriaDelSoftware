@@ -11,15 +11,13 @@ namespace TP1IngenieriaDelSoftware.Model
         public int Total_pp { get; set; }
         public int Total_h { get; set; }
         public int Total_ps { get; set; }
-        public HistorialDeControl historialDeControl { get; set; }
+        public List<HorarioDeControl> historialDeControl { get; set; }
 
         public JornadaLaboral(DateTime fechaI, DateTime fechaF)
         {
             FechaInicio = fechaI;
             FechaFin = fechaF;
         }
-
-
 
         public void buscar()
         {
