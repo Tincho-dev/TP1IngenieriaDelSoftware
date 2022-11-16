@@ -22,6 +22,7 @@ namespace ModelTesting
             _linea = new(1);
             _color = new("123","Test Color");
             _opCompleta = new(2, _linea, _modelo, _color, _turno,_fechaInicio);
+            _opCompleta.Linea.Estado = EstadoDisponibilidad.DISPONIBLE;
             _numeroOrdenDeProduccion = 2;
         }
 
@@ -78,5 +79,13 @@ namespace ModelTesting
             op = new();
             Assert.NotNull(op);
         }
+
+        /*
+        [Fact]
+        public void CreacionFallidaOrdenDeProduccionLineaElegidaOcupada()
+        {
+            
+        }
+        */
     }
 }

@@ -2,7 +2,7 @@
 using System.Data;
 using TP1IngenieriaDelSoftware.Models;
 
-namespace TP1IngenieriaDelSoftware.Data
+namespace TP1IngenieriaDelSoftware.Repositorio
 {
     public class MemoriaPersistente
     {
@@ -71,6 +71,11 @@ namespace TP1IngenieriaDelSoftware.Data
             return lineasLibres;
         }
 
+        public List<Linea> GetLineas()
+        {
+            return Lineas;
+        }
+
         public Turno BuscarTurno(int hora)
         {
             foreach (Turno turno in Turnos)
@@ -92,6 +97,16 @@ namespace TP1IngenieriaDelSoftware.Data
         internal List<Usuario> GetUsuarios()
         {
             return Usuarios;
+        }
+
+        public List<Modelo>? GetModelos()
+        {
+            return Modelos;
+        }
+
+        public List<Color>? GetColores()
+        {
+            return Colores;
         }
     }
 }

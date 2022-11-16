@@ -1,19 +1,16 @@
 ﻿namespace TP1IngenieriaDelSoftware.Models
 {
-    public enum EstadoOperacion
+    public enum EstadoOrdenDeProduccion
     {
         INICIADA,
         PAUSADA,
         FINALIZADA
     }
 
-    public class Estado
+    public enum EstadoDisponibilidad//para las lineas
     {
-        public EstadoOperacion estado; 
-
-        public Estado (EstadoOperacion estado)
-        {
-            this.estado = estado;
-        }
+        DISPONIBLE,
+        OCUPADA
     }
+
 }

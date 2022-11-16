@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using NodaTime;
+using System.Drawing.Drawing2D;
+using System.Runtime.Serialization;
 
 namespace TP1IngenieriaDelSoftware.Models
 {
@@ -7,7 +9,7 @@ namespace TP1IngenieriaDelSoftware.Models
     {
         public int? NumeroOP { get; set; }
         public Linea? Linea { get; set; }
-        public EstadoOperacion? Estado { get; set; }
+        public EstadoOrdenDeProduccion? Estado { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
         public Modelo? Modelo { get; set; }
@@ -15,27 +17,39 @@ namespace TP1IngenieriaDelSoftware.Models
         public List<JornadaLaboral>? Jornadas { get; set; } = new();
         public Semaforo? SemaforoObservado { get; set; }
         public Semaforo? SemaforoReproceso { get; set; }
+        public string LINEA_OCUPADA_TEXT_EXCEPTION = "Linea Ocupada, por favor seleccione otra";
 
         public OrdenDeProduccion(int numeroOP, Linea linea, Modelo modelo, Color color, Turno turno, DateTime fechaInicio)
         {
-            NumeroOP = numeroOP;
-            Linea = linea;
-            Estado = EstadoOperacion.INICIADA;
-            Modelo = modelo;
-            Color = color;
-            fechaInicio = FechaInicio;
+            if (linea.Estado == EstadoDisponibilidad.DISPONIBLE)
+            {
+                NumeroOP = numeroOP;
+                Linea = linea;
+                Estado = EstadoOrdenDeProduccion.INICIADA;
+                Modelo = modelo;
+                Color = color;
+                fechaInicio = FechaInicio;
 
-            SemaforoReproceso = new Semaforo(modelo.Lim_supR, modelo.Lim_inferiorR);
-            SemaforoObservado = new Semaforo(modelo.Lim_supO, modelo.Lim_inferiorO);
-            Jornadas.Add(new JornadaLaboral(DateTime.Now,turno.HoraDeFin));
+                linea.Estado = EstadoDisponibilidad.OCUPADA;
+
+                SemaforoReproceso = new Semaforo(modelo.Lim_supR, modelo.Lim_inferiorR);
+                SemaforoObservado = new Semaforo(modelo.Lim_supO, modelo.Lim_inferiorO);
+                Jornadas.Add(new JornadaLaboral(DateTime.Now, turno.HoraDeFin));
+            }
+            else
+            {
+                throw new Exception(LINEA_OCUPADA_TEXT_EXCEPTION);
+            }
+            
 
         }
 
         public OrdenDeProduccion(int numeroOP, Turno turno, DateTime fechaInicio)
         {
             NumeroOP = numeroOP;
-            Estado = EstadoOperacion.INICIADA;
+            Estado = EstadoOrdenDeProduccion.INICIADA;
             fechaInicio = FechaInicio;
+
 
             Jornadas.Add(new JornadaLaboral(DateTime.Now,turno.HoraDeFin));
         }
@@ -46,9 +60,15 @@ namespace TP1IngenieriaDelSoftware.Models
 
         public void Confirmar(Linea lineaActual, Color color, Modelo modelo)
         {
-            this.Linea = lineaActual;
-            this.Color = color;
-            this.AsignarModelo(modelo);
+            if(lineaActual.Estado == EstadoDisponibilidad.DISPONIBLE) {
+                this.Linea = lineaActual;
+                this.Color = color;
+                this.AsignarModelo(modelo);
+                lineaActual.Estado = EstadoDisponibilidad.OCUPADA;
+            } else
+            {
+                throw new Exception(LINEA_OCUPADA_TEXT_EXCEPTION);
+            }
         }
 
         public void AsignarModelo(Modelo modelo) 

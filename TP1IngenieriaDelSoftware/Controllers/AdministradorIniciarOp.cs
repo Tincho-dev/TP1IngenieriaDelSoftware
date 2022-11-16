@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TP1IngenieriaDelSoftware.Data;
 using TP1IngenieriaDelSoftware.Models;
+using TP1IngenieriaDelSoftware.Repositorio;
 
 namespace TP1IngenieriaDelSoftware.Controllers
 {

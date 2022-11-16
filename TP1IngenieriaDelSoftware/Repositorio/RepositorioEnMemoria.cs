@@ -9,7 +9,7 @@ namespace TP1IngenieriaDelSoftware.Repositorio
         private List<OrdenDeProduccion> OrdenesDeProduccion = new List<OrdenDeProduccion>();
         private List<Color> Colores = new List<Color>();
         private List<Modelo> Modelos = new List<Modelo>();
-
+        private List<Linea> Lineas= new List<Linea>();  
         public RepositorioEnMemoria()
         {
         }
@@ -24,6 +24,14 @@ namespace TP1IngenieriaDelSoftware.Repositorio
 
             this.Modelos.Add(new Modelo("ABC123","Fila Runner 2020",1,2,2,3));
             this.Modelos.Add(new Modelo("DEF567", "Nike Pegasus 2022",1,2,3,4));
+
+            this.Lineas.Add(new Linea(1));
+            this.Lineas.Add(new Linea(2));
+            this.Lineas.Add(new Linea(3));
+            this.Lineas.Add(new Linea(4));
+            this.Lineas.Add(new Linea(5));
+
+            OrdenesDeProduccion.Add(new OrdenDeProduccion());
         }
 
         public Usuario BuscarUsuario(Usuario usuario)
