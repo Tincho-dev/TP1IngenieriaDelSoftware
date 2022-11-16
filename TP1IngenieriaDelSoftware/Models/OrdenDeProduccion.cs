@@ -8,22 +8,22 @@ namespace TP1IngenieriaDelSoftware.Model
         public int NumeroOP { get; set; }
         public Linea Linea { get; set; }
         public EstadoOperacion Estado { get; set; }
-        public DateTime Fecha_Inicio { get; set; }
-        public DateTime Fecha_Fin { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFin { get; set; }
         public Modelo Modelo { get; set; }
         public Color Color { get; set; }
         public List<JornadaLaboral> Jornadas { get; set; } = new();
         public Semaforo SemaforoObservado { get; set; }
         public Semaforo SemaforoReproceso { get; set; }
 
-        public OrdenDeProduccion(int numeroOP, Linea linea, Modelo modelo, Color color, Turno turno)
+        public OrdenDeProduccion(int numeroOP, Linea linea, Modelo modelo, Color color, Turno turno, DateTime fechaInicio)
         {
             NumeroOP = numeroOP;
             Linea = linea;
             Estado = EstadoOperacion.INICIADA;
-            Fecha_Inicio = DateTime.UtcNow.;
             Modelo = modelo;
             Color = color;
+            fechaInicio = FechaInicio;
 
             SemaforoReproceso = new Semaforo(modelo.Lim_supR, modelo.Lim_inferiorR);
             SemaforoObservado = new Semaforo(modelo.Lim_supO, modelo.Lim_inferiorO);
@@ -31,11 +31,11 @@ namespace TP1IngenieriaDelSoftware.Model
 
         }
 
-        public OrdenDeProduccion(int numeroOP, Turno turno)
+        public OrdenDeProduccion(int numeroOP, Turno turno, DateTime fechaInicio)
         {
             NumeroOP = numeroOP;
             Estado = EstadoOperacion.INICIADA;
-            Fecha_Inicio = DateTime.UtcNow;
+            fechaInicio = FechaInicio;
 
             Jornadas.Add(new JornadaLaboral(turno.HoraDeFin));
         }

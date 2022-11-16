@@ -1,15 +1,14 @@
-﻿using NodaTime;
-using TP1IngenieriaDelSoftware.Model;
+﻿using TP1IngenieriaDelSoftware.Model;
 
 namespace TP1IngenieriaDelSoftware.Models
 {
-    public class RegistroDefectos
+    public class Incidencia
     {
-        public LocalTime Hora { get; set; }
+        public DateTime Hora { get; set; }
         public Defecto Defecto { get; set; }
         public PieSentido Pie { get; set; }
 
-        public RegistroDefectos(LocalTime hora, Defecto defecto, PieSentido pie)
+        public RegistroDefectos(DateTime hora, Defecto defecto, PieSentido pie)
         {
             Hora = hora;
             Defecto = defecto;
