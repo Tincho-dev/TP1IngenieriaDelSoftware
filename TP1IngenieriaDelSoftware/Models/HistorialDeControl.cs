@@ -35,15 +35,51 @@ namespace TP1IngenieriaDelSoftware.Models
         public void CorregirRegistroParDePrimera(PieSentido pie)
         {
             DateTime hora = DateTime.Now;
-
             Incidencia incidencia = new(hora, pie, -1);
-
             Registro.Add(incidencia);
         }
 
-        public int GetNumRegistro()
+        public int TotalIncidencias()
         {
             return Registro.Count;
+        }
+
+        public int TotalDefectos()
+        {
+            int totalDefectos = 0;
+            //int totalParesDePrimera = 0;
+            for (int incidencia = 0; incidencia < Registro.Count; incidencia++)
+            {
+                if(Registro[incidencia].Defecto == null)
+                {
+                    //totalParesDePrimera += Registro[incidencia].Cantidad;
+                }
+                else
+                {
+                    totalDefectos += Registro[incidencia].Cantidad;
+                }
+            }
+
+            return totalDefectos;
+        }
+
+        public int TotalParesDePrimera()
+        {
+            //int totalDefectos = 0;
+            int totalParesDePrimera = 0;
+            for (int incidencia = 0; incidencia < Registro.Count; incidencia++)
+            {
+                if (Registro[incidencia].Defecto == null)
+                {
+                    totalParesDePrimera += Registro[incidencia].Cantidad;
+                }
+                else
+                {
+                    //totalDefectos += Registro[incidencia].Cantidad;
+                }
+            }
+
+            return totalParesDePrimera;
         }
     }
 }
