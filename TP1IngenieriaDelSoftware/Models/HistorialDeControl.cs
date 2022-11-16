@@ -5,8 +5,13 @@ namespace TP1IngenieriaDelSoftware.Models
     public class HorarioDeControl
     {
         public List<Incidencia> Registro = new();
+        public DateTime FechaInicio;
+        public DateTime FechaFin;
 
-        public HorarioDeControl() { }
+        public HorarioDeControl(DateTime fechaInicio, DateTime fechaFin) {
+            FechaInicio = fechaInicio;
+            FechaFin = fechaFin;
+        }
 
         public void RegistrarDefecto(Defecto defecto, PieSentido pie)// creo la incidencia o la recibo por parametro
         {

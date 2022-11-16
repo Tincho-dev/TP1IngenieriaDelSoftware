@@ -7,7 +7,7 @@ namespace TP1IngenieriaDelSoftware.Model
     {
  
         public DateTime FechaInicio { get; set; }
-        public DateTime FechaFin { get; set; }// cambair todos o por LocalTime o DateTime
+        public DateTime FechaFin { get; set; }
         public int Total_pp { get; set; }
         public int Total_h { get; set; }
         public int Total_ps { get; set; }
@@ -17,6 +17,16 @@ namespace TP1IngenieriaDelSoftware.Model
         {
             FechaInicio = fechaI;
             FechaFin = fechaF;
+            historialDeControl = new List<HorarioDeControl>();
+        }
+
+        public void AgregarHorarioDeControl()
+        {
+            DateTime fechaActual = DateTime.Now;
+            DateTime fechaFin = FechaFin;
+
+            HorarioDeControl horarioDeControl = new HorarioDeControl(fechaActual, fechaFin);
+            historialDeControl.Add(horarioDeControl);
         }
 
         public void buscar()
