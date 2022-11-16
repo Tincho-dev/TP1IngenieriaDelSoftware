@@ -1,4 +1,4 @@
-﻿namespace TP1IngenieriaDelSoftware.Model
+﻿namespace TP1IngenieriaDelSoftware.Models
 {
     public class Linea
     {

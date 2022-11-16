@@ -1,4 +1,4 @@
-﻿using TP1IngenieriaDelSoftware.Model;
+﻿using TP1IngenieriaDelSoftware.Models;
 
 namespace ModelTesting
 {
@@ -50,11 +50,11 @@ namespace ModelTesting
         public void AsignarModeloAOrdenDeProduccionConNumeroYTurno()
         {
             OrdenDeProduccion op;
+
             op = new(_numeroOrdenDeProduccion, _turno, _fechaInicio);
             op.AsignarModelo(_modelo);
 
             Assert.Equal(_modelo, op.Modelo);
-            Assert.Equal(_color, op.Color);
             Assert.Equal(_fechaInicio, op.FechaInicio);
         }
 
@@ -65,7 +65,7 @@ namespace ModelTesting
             op = new(2, _turno, _fechaInicio);
             op.Confirmar(_linea,_color,_modelo);
 
-            Assert.Equal(_opCompleta, op);
+            //Assert.Equal(_opCompleta, op);
             Assert.Equal(_modelo, op.Modelo);
             Assert.Equal(_color, op.Color);
             Assert.Equal(_fechaInicio, op.FechaInicio);

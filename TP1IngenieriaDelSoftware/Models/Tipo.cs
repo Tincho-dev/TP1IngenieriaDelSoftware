@@ -6,6 +6,7 @@
         OBSERVADO,
         REPROCESO
     }
+
     public class Tipo
     {
         public TipoDefecto TipoDefecto { get; set; }

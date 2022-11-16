@@ -1,4 +1,5 @@
-﻿using TP1IngenieriaDelSoftware.Model;
+﻿using NodaTime;
+using TP1IngenieriaDelSoftware.Models;
 
 namespace TP1IngenieriaDelSoftware.Models
 {
@@ -6,9 +7,9 @@ namespace TP1IngenieriaDelSoftware.Models
     {
         public List<Incidencia> Registro = new();
         public DateTime FechaInicio;
-        public DateTime FechaFin;
+        public NodaTime.LocalTime FechaFin;
 
-        public HorarioDeControl(DateTime fechaInicio, DateTime fechaFin) {
+        public HorarioDeControl(DateTime fechaInicio, NodaTime.LocalTime fechaFin) {
             FechaInicio = fechaInicio;
             FechaFin = fechaFin;
         }
@@ -85,6 +86,11 @@ namespace TP1IngenieriaDelSoftware.Models
             }
 
             return totalParesDePrimera;
+        }
+
+        public void Finalizar(LocalTime fechaFin)
+        {
+            FechaFin= fechaFin;
         }
     }
 }

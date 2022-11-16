@@ -1,6 +1,6 @@
 ﻿using NodaTime;
 using System.Data;
-using TP1IngenieriaDelSoftware.Model;
+using TP1IngenieriaDelSoftware.Models;
 
 namespace TP1IngenieriaDelSoftware.Data
 {
@@ -47,22 +47,25 @@ namespace TP1IngenieriaDelSoftware.Data
                 Lineas.ToArray()[1],
                 Modelos.ToArray()[1],
                 Colores.ToArray()[1],
-                Turnos.ToArray()[1]));
+                Turnos.ToArray()[1],
+                DateTime.Now));
             OrdenesDeProduccion.Add(new OrdenDeProduccion(
                 2,
                 Lineas.ToArray()[2],
                 Modelos.ToArray()[2],
                 Colores.ToArray()[2],
-                Turnos.ToArray()[2]));
+                Turnos.ToArray()[2],
+                DateTime.Now));
         }
 
         public List<Linea> LineasLibres()
         {
-            List<Linea> lineasLibres = Lineas;
+            List<Linea>? lineasLibres = Lineas;
 
             foreach (OrdenDeProduccion op in OrdenesDeProduccion)
             {
-                lineasLibres.Remove(op.Linea);
+                if(op.Linea!= null)
+                    lineasLibres.Remove(op.Linea);
             }
 
             return lineasLibres;

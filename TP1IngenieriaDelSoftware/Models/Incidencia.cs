@@ -1,4 +1,4 @@
-﻿using TP1IngenieriaDelSoftware.Model;
+﻿using TP1IngenieriaDelSoftware.Models;
 
 namespace TP1IngenieriaDelSoftware.Models
 {

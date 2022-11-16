@@ -1,13 +1,13 @@
 ﻿using TP1IngenieriaDelSoftware.Models;
 
-namespace TP1IngenieriaDelSoftware.Model
+namespace TP1IngenieriaDelSoftware.Models
 {
     public class Defecto
     {
-        public Tipo Tipo { get; set; }
+        public TipoDefecto Tipo { get; set; }
         public string Descripcion { get; set; }
 
-        public Defecto(Tipo tipo, string descripcion)
+        public Defecto(TipoDefecto tipo, string descripcion)
         {
             Tipo = tipo;
             Descripcion = descripcion;

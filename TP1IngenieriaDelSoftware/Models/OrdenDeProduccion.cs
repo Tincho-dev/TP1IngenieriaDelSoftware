@@ -1,20 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using NodaTime;
 
-namespace TP1IngenieriaDelSoftware.Model
+namespace TP1IngenieriaDelSoftware.Models
 {
     public class OrdenDeProduccion
     {
-        public int NumeroOP { get; set; }
-        public Linea Linea { get; set; }
-        public EstadoOperacion Estado { get; set; }
+        public int? NumeroOP { get; set; }
+        public Linea? Linea { get; set; }
+        public EstadoOperacion? Estado { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
-        public Modelo Modelo { get; set; }
-        public Color Color { get; set; }
-        public List<JornadaLaboral> Jornadas { get; set; } = new();
-        public Semaforo SemaforoObservado { get; set; }
-        public Semaforo SemaforoReproceso { get; set; }
+        public Modelo? Modelo { get; set; }
+        public Color? Color { get; set; }
+        public List<JornadaLaboral>? Jornadas { get; set; } = new();
+        public Semaforo? SemaforoObservado { get; set; }
+        public Semaforo? SemaforoReproceso { get; set; }
 
         public OrdenDeProduccion(int numeroOP, Linea linea, Modelo modelo, Color color, Turno turno, DateTime fechaInicio)
         {
@@ -27,7 +27,7 @@ namespace TP1IngenieriaDelSoftware.Model
 
             SemaforoReproceso = new Semaforo(modelo.Lim_supR, modelo.Lim_inferiorR);
             SemaforoObservado = new Semaforo(modelo.Lim_supO, modelo.Lim_inferiorO);
-            Jornadas.Add(new JornadaLaboral(turno.HoraDeFin));
+            Jornadas.Add(new JornadaLaboral(DateTime.Now,turno.HoraDeFin));
 
         }
 
@@ -37,7 +37,7 @@ namespace TP1IngenieriaDelSoftware.Model
             Estado = EstadoOperacion.INICIADA;
             fechaInicio = FechaInicio;
 
-            Jornadas.Add(new JornadaLaboral(turno.HoraDeFin));
+            Jornadas.Add(new JornadaLaboral(DateTime.Now,turno.HoraDeFin));
         }
 
         public OrdenDeProduccion()

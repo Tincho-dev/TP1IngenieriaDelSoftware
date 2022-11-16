@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace TP1IngenieriaDelSoftware.Model
+namespace TP1IngenieriaDelSoftware.Models
 {
     public enum color
     {

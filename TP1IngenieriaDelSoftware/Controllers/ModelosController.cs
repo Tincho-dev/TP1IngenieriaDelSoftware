@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TP1IngenieriaDelSoftware.Data;
-using TP1IngenieriaDelSoftware.Model;
+using TP1IngenieriaDelSoftware.Models;
 
 namespace TP1IngenieriaDelSoftware.Controllers
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using TP1IngenieriaDelSoftware.Model;
+using TP1IngenieriaDelSoftware.Models;
 
 namespace TP1IngenieriaDelSoftware.Data
 {
@@ -14,6 +14,6 @@ namespace TP1IngenieriaDelSoftware.Data
         {
         }
 
-        public DbSet<TP1IngenieriaDelSoftware.Model.Modelo> Modelo { get; set; } = default!;
+        public DbSet<TP1IngenieriaDelSoftware.Models.Modelo> Modelo { get; set; } = default!;
     }
 }

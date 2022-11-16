@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NodaTime;
-using System.Data;
 using TP1IngenieriaDelSoftware.Data;
-using TP1IngenieriaDelSoftware.Model;
 using TP1IngenieriaDelSoftware.Models;
 
 namespace TP1IngenieriaDelSoftware.Controllers
@@ -24,7 +21,8 @@ namespace TP1IngenieriaDelSoftware.Controllers
 
              op = new(
                 numero,
-                turnoActual
+                turnoActual,
+                DateTime.Now
                 );
         }
 

@@ -1,13 +1,13 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace TP1IngenieriaDelSoftware.Model
+namespace TP1IngenieriaDelSoftware.Models
 {
     public class Usuario
     {
         public string User { get; set; }
         public string Password { get; set; }
-        public string Permisos { get; set; }
+        public string? Permisos { get; set; }
 
         public Usuario(string usuario, string contraseña, string permisos)
         {

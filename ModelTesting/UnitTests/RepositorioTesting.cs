@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TP1IngenieriaDelSoftware.Model;
+﻿using TP1IngenieriaDelSoftware.Models;
 using TP1IngenieriaDelSoftware.Repositorio;
 
 namespace ModelTesting.UnitTests
