@@ -1,4 +1,4 @@
-﻿/*
+﻿using TP1IngenieriaDelSoftware.Exceptions;
 using TP1IngenieriaDelSoftware.Models;
 using TP1IngenieriaDelSoftware.Repositorio;
 
@@ -22,6 +22,7 @@ namespace ModelTesting.UnitTests
             colores = repositorio.GetColores();
 
         }
+
         [Fact]
         public void AsignarLineaOcupadaAOrdenDeProduccion()
         {
@@ -35,8 +36,10 @@ namespace ModelTesting.UnitTests
             op = new OrdenDeProduccion(34556, l1, repositorio.Modelos[2], repositorio.Colores[0], repositorio.Turnos[2], DateTime.Now);
 
             //Comprobacion
-            Assert.Throws();
+            Assert.Throws<DomainException>(() =>
+            {
+                _ = new OrdenDeProduccion(34556, l1, repositorio.Modelos[2], repositorio.Colores[0], repositorio.Turnos[2], DateTime.Now);
+            });
 		}
     }
 }
-*/

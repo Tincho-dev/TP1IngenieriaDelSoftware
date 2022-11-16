@@ -2,6 +2,7 @@
 using NodaTime;
 using System.Drawing.Drawing2D;
 using System.Runtime.Serialization;
+using TP1IngenieriaDelSoftware.Exceptions;
 
 namespace TP1IngenieriaDelSoftware.Models
 {
@@ -38,7 +39,7 @@ namespace TP1IngenieriaDelSoftware.Models
             }
             else
             {
-                throw new Exception(LINEA_OCUPADA_TEXT_EXCEPTION);
+                throw new DomainException(LINEA_OCUPADA_TEXT_EXCEPTION);
             }
             
 
