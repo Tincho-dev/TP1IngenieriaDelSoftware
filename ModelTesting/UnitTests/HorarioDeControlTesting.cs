@@ -7,7 +7,7 @@ using TP1IngenieriaDelSoftware.Models;
 
 namespace ModelTesting.UnitTests
 {
-    internal class HorarioDeControlTesting
+    public class HorarioDeControlTesting
     {
         public HorarioDeControl HorarioDeControl;
         public readonly DateTime _fechaInicio;
@@ -17,6 +17,18 @@ namespace ModelTesting.UnitTests
         {
             HorarioDeControl HorarioDeControl = new(_fechaInicio,_fechaFin);
         }
+        
+        [Fact]
+        public void RegistroIncidenciaConDefecto()
+        {
+
+        }
+        [Fact]
+        public void RegistroIncidenciaParDePrimera()
+        {
+
+        }
+
 
     }
 }
